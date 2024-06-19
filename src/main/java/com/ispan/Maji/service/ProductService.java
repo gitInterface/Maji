@@ -2,6 +2,7 @@ package com.ispan.Maji.service;
 
 import java.util.Base64;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,4 +78,18 @@ public class ProductService {
         return productPage;
     }
 
+    // 隨機選擇商品
+    public List<ProductBean> getRandomProducts(int count) {
+        List<ProductBean> allProducts = productRepository.findAll();
+        Random random = new Random();
+        List<ProductBean> randomProducts = allProducts.stream()
+            .sorted((p1, p2) -> random.nextInt(2) - 1)
+            .limit(count)
+            .collect(Collectors.toList());
+
+        // 轉換圖片為Base64
+        randomProducts.forEach(this::convertToBase64);
+
+        return randomProducts;
+    }
 }

@@ -67,7 +67,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav nav-source">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="/pages/onlineshopping">
               <b>線上購物</b><br>
               <span>online store</span>
             </a>

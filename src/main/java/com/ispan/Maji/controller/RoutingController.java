@@ -61,6 +61,10 @@ public class RoutingController {
 	public String method15() {
 		return "/portal/resetpassword";
 	}
+	@GetMapping(value = {"/pages/onlineshopping"})
+	public String method16() {
+		return "/pages/onlineshopping";
+	}
 }
 
 

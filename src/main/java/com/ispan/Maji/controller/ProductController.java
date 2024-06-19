@@ -124,4 +124,10 @@ public class ProductController {
         }
     }
 
+    // 隨機選擇四樣商品
+    @GetMapping("/random")
+    public List<ProductBean> getRandomProducts() {
+        return productService.getRandomProducts(4);
+    }
+
 }

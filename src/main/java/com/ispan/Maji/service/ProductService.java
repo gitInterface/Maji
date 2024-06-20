@@ -70,7 +70,7 @@ public class ProductService {
         return product;
     }
 
-    // 分頁查詢的方法
+    // 分頁查詢的方法(無限滾動下拉)
     public Page<ProductBean> getProductsByPage(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<ProductBean> productPage = productRepository.findAll(pageable);

@@ -10,7 +10,7 @@
     <%@ include file="/includes/libs.jsp" %>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-            const textArray = ["歡迎來到我們的網站", "這裡有很多有趣的內容", "請隨意瀏覽！"];
+            const textArray = ["歡迎來到我們的網站", "這是一個模仿網站", "關於神農生活的小電商", "請隨意瀏覽！"];
             let textIndex = 0;
             let charIndex = 0;
             const typingSpeed = 100;

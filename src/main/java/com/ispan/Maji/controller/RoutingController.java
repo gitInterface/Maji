@@ -73,6 +73,10 @@ public class RoutingController {
 	public String method18() {
 		return "/pages/privacypolicy";
 	}
+	@GetMapping(value = {"/pages/productdetail"})
+	public String method19() {
+		return "/pages/productdetail";
+	}
 }
 
 

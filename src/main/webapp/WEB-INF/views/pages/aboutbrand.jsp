@@ -25,7 +25,7 @@
 </head>
 <body>
     <%@ include file="/includes/header.jsp" %>
-
+    <br><br><br><br><br>
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-6">
@@ -80,5 +80,7 @@
             </div>
         </div>
     </div>
+
+    <%@ include file="/includes/footer.jsp" %>
 </body>
 </html>

@@ -55,30 +55,43 @@
                     const productsContainer = document.getElementById('products-container');
 
                     products.forEach(product => {
+                        const colDiv = document.createElement('div');
+                        colDiv.className = 'col-md-3 mb-4';
+
                         const productCard = document.createElement('div');
-                        productCard.className = 'product-card';
+                        productCard.className = 'card h-100';
 
                         const productImage = document.createElement('img');
+                        productImage.className = 'card-img-top';
                         productImage.src = 'data:image/png;base64,' + product.pictureBase64;
                         productCard.appendChild(productImage);
 
+                        const cardBody = document.createElement('div');
+                        cardBody.className = 'card-body';
+
                         const productName = document.createElement('h5');
+                        productName.className = 'card-title';
                         productName.textContent = product.productName;
-                        productCard.appendChild(productName);
+                        cardBody.appendChild(productName);
 
                         const productDescription = document.createElement('p');
+                        productDescription.className = 'card-text';
                         productDescription.textContent = product.discription;
-                        productCard.appendChild(productDescription);
+                        cardBody.appendChild(productDescription);
 
                         const productPrice = document.createElement('p');
+                        productPrice.className = 'card-text';
                         productPrice.textContent = 'Price: $' + product.price;
-                        productCard.appendChild(productPrice);
+                        cardBody.appendChild(productPrice);
 
                         const productTag = document.createElement('p');
-                        productTag.textContent = 'Tag:' + product.tag;
-                        productCard.appendChild(productTag);
+                        productTag.className = 'card-text';
+                        productTag.textContent = 'Tag: ' + product.tag;
+                        cardBody.appendChild(productTag);
 
-                        productsContainer.appendChild(productCard);
+                        productCard.appendChild(cardBody);
+                        colDiv.appendChild(productCard);
+                        productsContainer.appendChild(colDiv);
                     });
                 })
                 .catch(function(error) {
@@ -118,33 +131,6 @@
                 border-color: transparent;
             }
         }
-
-        /* 商品容器 */
-        .products-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-        /* 商品卡片呈現 */
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px;
-            width: calc(25% - 40px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            text-align: center;
-        }
-
-        /* 商品卡片圖片 */
-        .product-card img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -157,7 +143,9 @@
     <h3 style="text-align: center;">商品推薦</h3>
     
     <div class="container">
-        <div class="products-container" id="products-container"></div>
+        <div class="row products-container" id="products-container"></div>
     </div>
+
+    <%@ include file="/includes/footer.jsp" %>
 </body>
 </html>

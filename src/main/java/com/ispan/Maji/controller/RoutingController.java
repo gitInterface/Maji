@@ -65,6 +65,14 @@ public class RoutingController {
 	public String method16() {
 		return "/pages/onlineshopping";
 	}
+	@GetMapping(value = {"/pages/termsofuse"})
+	public String method17() {
+		return "/pages/termsofuse";
+	}
+	@GetMapping(value = {"/pages/privacypolicy"})
+	public String method18() {
+		return "/pages/privacypolicy";
+	}
 }
 
 

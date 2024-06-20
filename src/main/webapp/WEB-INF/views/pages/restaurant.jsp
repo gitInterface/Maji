@@ -24,7 +24,7 @@
 </head>
 <body>
     <%@ include file="/includes/header.jsp" %>
-
+    <br><br><br><br><br>
     <h3 style="text-align: center;">自有餐廳</h3>
 
     <div class="container-fluid mt-4">
@@ -83,5 +83,7 @@
             </div>
         </div>
     </div>
+
+    <%@ include file="/includes/footer.jsp" %>
 </body>
 </html>

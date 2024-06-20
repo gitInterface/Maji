@@ -86,7 +86,7 @@
 </head>
 <body>
     <%@ include file="/includes/header.jsp" %>
-
+    <br><br><br><br><br>
     <div class="container feedback-container">
         <form id="feedbackForm">
             <!-- 標題 -->
@@ -103,5 +103,6 @@
         </form>
     </div>
     
+    <%@ include file="/includes/footer.jsp" %>
 </body>
 </html>

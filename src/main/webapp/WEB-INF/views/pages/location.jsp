@@ -71,7 +71,7 @@
 </head>
 <body>
     <%@ include file="/includes/header.jsp" %>
-
+    <br><br><br><br><br>
     <div id="map"></div>
 
     <h3 style="text-align: center;">門市資訊</h3>
@@ -118,5 +118,7 @@
             </div>
         </div>
     </div>
+
+    <%@ include file="/includes/footer.jsp" %>
 </body>
 </html>

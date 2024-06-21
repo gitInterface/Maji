@@ -18,10 +18,10 @@ public class ShoppingCartBean {
     private Integer cartID;
 
     @Column(name = "fk_userID", columnDefinition = "int")
-	private String userID;
+	private Integer userID;
 
     @Column(name = "fk_productID", columnDefinition = "int")
-	private String productID;
+	private Integer productID;
 
     @Column(name = "numbers", columnDefinition = "int")
     private Integer numbers;

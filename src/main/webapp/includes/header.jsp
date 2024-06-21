@@ -125,9 +125,9 @@
           </a>
         </div>
         &nbsp;
-        <a href="#" style="color: gray;">
+        <a href="/pages/shoppingcart" style="color: gray;">
           <i class="fa fa-shopping-cart"></i>
-          <span><b>購物籃</b></span>
+          <span><b>購物車</b></span>
         </a>
       </div>
     </div>

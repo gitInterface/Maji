@@ -74,10 +74,10 @@
                         productName.textContent = product.productName;
                         cardBody.appendChild(productName);
 
-                        const productDescription = document.createElement('p');
-                        productDescription.className = 'card-text';
-                        productDescription.textContent = product.discription;
-                        cardBody.appendChild(productDescription);
+                        // const productDescription = document.createElement('p');
+                        // productDescription.className = 'card-text';
+                        // productDescription.textContent = product.discription;
+                        // cardBody.appendChild(productDescription);
 
                         const productPrice = document.createElement('p');
                         productPrice.className = 'card-text';
@@ -88,6 +88,17 @@
                         productTag.className = 'card-text';
                         productTag.textContent = 'Tag: ' + product.tag;
                         cardBody.appendChild(productTag);
+
+                        const productLinkWrapper = document.createElement('div');
+                        productLinkWrapper.className = 'd-flex justify-content-center';
+
+                        const productLink = document.createElement('a');
+                        productLink.href = '${pageContext.request.contextPath}/pages/productdetail?productId=' + product.productID;
+                        productLink.className = 'btn btn-warning';
+                        productLink.textContent = '查看詳情';
+
+                        productLinkWrapper.appendChild(productLink);
+                        cardBody.appendChild(productLinkWrapper);
 
                         productCard.appendChild(cardBody);
                         colDiv.appendChild(productCard);

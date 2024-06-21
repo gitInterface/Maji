@@ -77,6 +77,10 @@ public class RoutingController {
 	public String method19() {
 		return "/pages/productdetail";
 	}
+	@GetMapping(value = {"/pages/shoppingcart"})
+	public String method20() {
+		return "/pages/shoppingcart";
+	}
 }
 
 

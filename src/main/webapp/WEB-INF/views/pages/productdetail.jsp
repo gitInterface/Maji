@@ -59,9 +59,6 @@
             const userID = "<c:out value='${sessionScope.loggedInUser.userID}' />";
             const productID = new URLSearchParams(window.location.search).get('productId');
             const numbers = document.getElementById('product-quantity').value;
-            console.log(userID);
-            console.log(productID);
-            console.log(numbers);
             axios.post('${pageContext.request.contextPath}/api/cart/add', {
                 userID: parseInt(userID),
                 productID: parseInt(productID),

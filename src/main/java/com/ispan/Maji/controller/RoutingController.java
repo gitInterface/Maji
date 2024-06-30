@@ -85,6 +85,34 @@ public class RoutingController {
 	public String method21() {
 		return "/pages/checkout";
 	}
+	@GetMapping(value = {"/secure/loginback"})
+	public String method22() {
+		return "/secure/loginback";
+	}
+	@GetMapping(value = {"/pages/news"})
+	public String method23() {
+		return "/pages/news";
+	}
+	@GetMapping(value = {"/secure/newsview"})
+	public String method24() {
+		return "/secure/newsview";
+	}
+	@GetMapping(value = {"/secure/newsinsert"})
+	public String method25() {
+		return "/secure/newsinsert";
+	}
+	@GetMapping(value = {"/secure/newsupdate"})
+	public String method26() {
+		return "/secure/newsupdate";
+	}
+	@GetMapping(value = {"/secure/newsviewdetail"})
+	public String method27() {
+		return "/secure/newsviewdetail";
+	}
+	@GetMapping(value = {"/pages/newsdetail"})
+	public String method28() {
+		return "/pages/newsdetail";
+	}
 }
 
 

@@ -15,6 +15,33 @@
     let hasMore = true; // 是否還有更多產品可以加載
 
     window.onload = function() {
+        // 檢查用戶是否已登入
+        axios.get('/api/admin/current')
+                .then(function(response) {
+                    if (!response.data) {
+                        // 如果未登入，提示並跳轉到登入頁面
+                        Swal.fire({
+                            title: '未登入',
+                            text: '請先登入以提交意見',
+                            icon: 'warning',
+                            confirmButtonText: '確定'
+                        }).then(function() {
+                            window.location.href = '/secure/loginback';
+                        });
+                    }
+                })
+                .catch(function(error) {
+                    // 如果發生錯誤，假設用戶未登入
+                    Swal.fire({
+                        title: '未登入',
+                        text: '請先登入以提交意見',
+                        icon: 'warning',
+                        confirmButtonText: '確定'
+                    }).then(function() {
+                        window.location.href = '/secure/loginback';
+                    });
+                });
+
         // 初始頁面加載商品
         fetchProducts();
         
@@ -47,7 +74,7 @@
             var template = document.getElementById('product-template'); // 產品模板
 
             products.forEach(function(product) {
-                console.log("Product data:", product);
+                // console.log("Product data:", product);
 
                 // 克隆模板內容
                 var clone = template.content.cloneNode(true);
@@ -79,7 +106,7 @@
 
                 // 添加點擊事件以跳轉到商品詳情頁面
                 clone.querySelector('.card').onclick = function() {
-                    let url = '/backend/productupdate?productID='+product.productID;
+                    let url = '/secure/productupdate?productID='+product.productID;
                     window.location.href = url;
                 };
 

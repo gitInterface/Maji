@@ -9,6 +9,33 @@
     <title>商品更新(後台)</title>
     <%@ include file="/includes/libs.jsp" %>
     <script type="text/javascript">
+        // 檢查用戶是否已登入
+        axios.get('/api/admin/current')
+                .then(function(response) {
+                    if (!response.data) {
+                        // 如果未登入，提示並跳轉到登入頁面
+                        Swal.fire({
+                            title: '未登入',
+                            text: '請先登入以提交意見',
+                            icon: 'warning',
+                            confirmButtonText: '確定'
+                        }).then(function() {
+                            window.location.href = '/secure/loginback';
+                        });
+                    }
+                })
+                .catch(function(error) {
+                    // 如果發生錯誤，假設用戶未登入
+                    Swal.fire({
+                        title: '未登入',
+                        text: '請先登入以提交意見',
+                        icon: 'warning',
+                        confirmButtonText: '確定'
+                    }).then(function() {
+                        window.location.href = '/secure/loginback';
+                    });
+                });
+                
         // 預覽圖片功能
         function previewImage(event) {
             var reader = new FileReader();

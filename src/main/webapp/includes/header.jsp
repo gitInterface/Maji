@@ -73,7 +73,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/pages/news">
               <b>最新消息</b><br>
               <span>news</span>
             </a>

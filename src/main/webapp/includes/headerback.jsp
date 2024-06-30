@@ -9,23 +9,33 @@
     <title>導覽列(後台)</title>
     <%@ include file="/includes/libs.jsp" %>
     <script type="text/javascript">
-        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('logoutButton').addEventListener('click', function() {
+                axios.post('${pageContext.request.contextPath}/api/admin/logout')
+                    .then(function(response) {
+                        Swal.fire('登出成功!', response.data, 'success')
+                            .then(function() {
+                                window.location.href = '${pageContext.request.contextPath}/secure/loginback';
+                            });
+                    })
+                    .catch(function(error) {
+                        Swal.fire('登出失敗!', '發生錯誤，請稍後再試', 'error');
+                    });
+            });
+        });
     </script>
     <style>
     .nav-item{
         text-align: center;
         padding:20px;
       }
-    .source{
-        margin-left: 15%;
-    }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <!-- 神農logo -->
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/secure/productview">
             <img src="${pageContext.request.contextPath}/image/maji-logo.png" alt="神農生活logo" width="150px">
           </a>
           <!-- 漢堡toggler -->
@@ -33,7 +43,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav source">
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a href="/secure/productview" class="nav-link">
                   <b>商品列表</b><br>
@@ -46,7 +56,24 @@
                   <span>product insert</span></a>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="/secure/newsview" class="nav-link">
+                  <b>最新消息</b><br>
+                  <span>news list</span></a>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/secure/newsinsert" class="nav-link">
+                  <b>新增消息</b><br>
+                  <span>news insert</span></a>
+                </a>
+              </li>
             </ul>
+            <ul class="navbar-nav ml-auto"> 
+              <li class="nav-item"> 
+                <button class="btn btn-danger" id="logoutButton"><b>登出</b></button>
+              </li> 
+          </ul> 
           </div>
         </div>
       </nav>

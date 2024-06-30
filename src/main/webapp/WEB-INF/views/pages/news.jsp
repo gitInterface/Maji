@@ -31,9 +31,9 @@
                 newsList.forEach(function(news) {
                     var newsElement = document.createElement('div');
                     newsElement.className = 'col-md-4 mb-4';
-                    var innerHTML = '<div class="card h-100 animate__animated animate__fadeIn">';
+                    var innerHTML = '<div class="card h-100 animate__animated animate__flipInY">';
                     innerHTML += '<div class="card-body">';
-                    innerHTML += '<h5 class="card-title">' + news.title + '</h5>';
+                    innerHTML += '<h5 class="card-title"><a href="javascript:void(0);" style="color:gray" onclick="viewNews(' + news.newsID + ')">' + news.title + '</a></h5>';
                     // 圖片
                     if (news.pictureBase64) {
                         innerHTML += '<img src="data:image/png;base64,' + news.pictureBase64 + '" class="card-img-top" alt="News Image">';
